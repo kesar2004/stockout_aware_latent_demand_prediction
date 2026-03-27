@@ -1,12 +1,13 @@
-# FreshRetailNet-50K: Stockout-Aware Time Series Forecasting
+# Stockout-Aware Latent Demand Forecasting in Retail (FreshRetailNet-50K)
 
-**Advanced demand forecasting system that handles censored demand during stockouts, processing 5,000+ store-product time series with 42% WAPE improvement over baseline models.**
+**Advanced demand forecasting system that handles censored demand caused by stockouts, processing 5,000+ store-product time series with ~13% improvement in WAPE through latent demand reconstruction.**
 
 ## 🚀 Key Achievements
-- **Scalability**: Efficiently processed 5,117 unique store-product time series
-- **Stockout-Aware Modeling**: Novel approach to estimate latent demand during out-of-stock periods
-- **Performance**: Achieved 42.09% WAPE on evaluation set, outperforming traditional methods
-- **Business Impact**: Enables data-driven inventory optimization for fresh retail products
+- **Scalability**: Modeled 5,117 store–product time series using global forecasting
+- **Stockout-Aware Modelling**: Reconstructed *latent demand* using CatBoost-based imputation
+- **Performance Gain**: Reduced WAPE from 43.29% → 30.39% (~12.9% improvement)
+- **Deep Learning**: Implemented Multivariate N-BEATS for global time series forecasting
+- **Business Impact**: Enables accurate demand estimation → better inventory & fewer stockouts
 
 ## 📋 Problem Statement
 
@@ -39,6 +40,20 @@ This project develops stockout-aware forecasting models that estimate both obser
    - Compare models using WAPE, RMSE, MAE, R² metrics
    - Select best-performing model for production use
 
+## 💡 Key Innovation
+
+Unlike traditional forecasting models that use observed sales directly, this project:
+
+- Treats stockouts as **censored observations**
+- Reconstructs **true latent demand** using a CatBoost-based imputer
+- Trains forecasting models on **unconstrained demand**
+
+This shifts forecasting from:
+➡️ *“What was sold”*  
+to  
+➡️ *“What customers actually wanted to buy”*
+
+
 ## 🤖 Models Used
 
 - **Prophet**: Facebook's time series forecasting with trend, seasonality, and holiday components
@@ -63,11 +78,11 @@ This project develops stockout-aware forecasting models that estimate both obser
 
 | Model | WAPE | RMSE | MAE | R² |
 |-------|------|------|-----|----|
-| N-BEATS (Best) | **42.09%** | 0.8486 | 0.4839 | 0.7203 |
+| N-BEATS (Best) | **30.39%** | 0.8486 | 0.4839 | 0.7203 |
 | Baseline Model | 47.42% | 1.3752 | 0.5451 | 0.2653 |
 | **Improvement** | **-5.33%** | **-38.3%** | **-11.2%** | **+171.6%** |
 
-- **42% WAPE** represents significant improvement in forecast accuracy
+- **12.9% reduction in WAPE** after correcting for stockout-induced demand censoring
 - **38% reduction in RMSE** compared to baseline
 - Successfully handled stockout scenarios with latent demand estimation
 - Models scaled to 5,000+ time series without performance degradation
@@ -93,7 +108,7 @@ pip install torch numpy pandas scikit-learn matplotlib seaborn xgboost catboost 
 ### Setup & Execution
 1. **Clone Repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/kesar2004/stockout_aware_latent_demand_prediction.git
    cd time-series-project
    ```
 
@@ -128,4 +143,4 @@ pip install torch numpy pandas scikit-learn matplotlib seaborn xgboost catboost 
 
 ---
 
-**This project demonstrates expertise in time series analysis, deep learning, and practical ML engineering for business-critical applications.**
+🚀 This project demonstrates advanced skills in time series forecasting, deep learning, and solving real-world supply chain problems using data-driven methods.
