@@ -2,14 +2,14 @@
 
 **Advanced demand forecasting system that handles censored demand caused by stockouts, processing 5,000+ store-product time series with ~13% improvement in WAPE through latent demand reconstruction.**
 
-## 🚀 Key Achievements
+## Key Achievements
 - **Scalability**: Modeled 5,117 store–product time series using global forecasting
 - **Stockout-Aware Modelling**: Reconstructed *latent demand* using CatBoost-based imputation
 - **Performance Gain**: Reduced WAPE from 43.29% → 30.39% (~12.9% improvement)
 - **Deep Learning**: Implemented Multivariate N-BEATS for global time series forecasting
 - **Business Impact**: Enables accurate demand estimation → better inventory & fewer stockouts
 
-## 📋 Problem Statement
+## Problem Statement
 
 Retail demand forecasting faces critical challenges with **censored demand** during stockouts:
 - When products are out of stock, true demand remains unobserved
@@ -19,7 +19,7 @@ Retail demand forecasting faces critical challenges with **censored demand** dur
 
 This project develops stockout-aware forecasting models that estimate both observed and latent demand, providing accurate predictions for inventory optimization.
 
-## 🔄 Approach
+## Approach
 
 ### End-to-End Pipeline
 1. **Data Acquisition & Preprocessing**
@@ -40,7 +40,7 @@ This project develops stockout-aware forecasting models that estimate both obser
    - Compare models using WAPE, RMSE, MAE, R² metrics
    - Select best-performing model for production use
 
-## 💡 Key Innovation
+##  Key Innovation
 
 Unlike traditional forecasting models that use observed sales directly, this project:
 
@@ -49,12 +49,12 @@ Unlike traditional forecasting models that use observed sales directly, this pro
 - Trains forecasting models on **unconstrained demand**
 
 This shifts forecasting from:
-➡️ *“What was sold”*  
+ *“What was sold”*  
 to  
-➡️ *“What customers actually wanted to buy”*
+ *“What customers actually wanted to buy”*
 
 
-## 🤖 Models Used
+##  Models Used
 
 - **Prophet**: Facebook's time series forecasting with trend, seasonality, and holiday components
 - **CatBoost**: Gradient boosting on decision trees with categorical feature handling
@@ -62,7 +62,7 @@ to
 - **Attention-Based LSTM**: Deep learning sequence model with attention mechanism
 - **Latent Demand Imputer**: Custom model to estimate demand during stockouts
 
-## 📊 Dataset Description
+##  Dataset Description
 
 - **Source**: FreshRetailNet-50K (Hugging Face)
 - **Scope**: City subset (city_id = 12) with 5,117 store-product combinations
@@ -74,7 +74,7 @@ to
   - Behavioral: stockout flags, promotions, activity indicators
   - Derived: rolling statistics, lag features, cyclical encodings
 
-## 📈 Key Results
+##  Key Results
 
 | Model | WAPE | RMSE | MAE | R² |
 |-------|------|------|-----|----|
@@ -87,7 +87,7 @@ to
 - Successfully handled stockout scenarios with latent demand estimation
 - Models scaled to 5,000+ time series without performance degradation
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **Languages**: Python 3.8+
 - **Deep Learning**: PyTorch, CUDA
@@ -98,7 +98,7 @@ to
 - **Environment**: Google Colab, Jupyter Notebooks
 - **Data**: Hugging Face Datasets
 
-## 🚀 How to Run the Project
+##  How to Run the Project
 
 ### Prerequisites
 ```bash
@@ -131,7 +131,7 @@ pip install torch numpy pandas scikit-learn matplotlib seaborn xgboost catboost 
    EPOCHS = 50
    ```
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 - **Ensemble Methods**: Combine multiple models for better accuracy
 - **Real-time Forecasting**: Online learning with streaming data
