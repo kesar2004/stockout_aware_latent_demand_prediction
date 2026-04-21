@@ -140,7 +140,3 @@ pip install torch numpy pandas scikit-learn matplotlib seaborn xgboost catboost 
 - **MLOps Pipeline**: Automated retraining and model deployment
 - **Scalability**: Distributed training for full dataset (all cities)
 - **Business Integration**: ERP system integration for inventory optimization
-
----
-
-🚀 This project demonstrates advanced skills in time series forecasting, deep learning, and solving real-world supply chain problems using data-driven methods.
